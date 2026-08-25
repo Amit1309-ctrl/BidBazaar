@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-base-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-image:
+      radial-gradient(ellipse 800px 500px at 50% -10%, rgba(23,166,115,0.10), transparent),
+      radial-gradient(ellipse 600px 400px at 90% 10%, rgba(232,181,74,0.06), transparent);
+  }
+  :focus-visible {
+    outline: 2px solid #22C68C;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: rgba(23,166,115,0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .tabular-nums-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
