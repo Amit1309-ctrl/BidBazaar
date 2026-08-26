@@ -9,18 +9,18 @@
  */
 
 export interface BidConfig {
-  minimum_starting_bid_paise: number; // ₹499 default
-  tier1_ceiling_paise: number;        // below this: flat increment
-  tier1_flat_increment_paise: number; // ₹500 default
-  tier2_ceiling_paise: number;        // ₹10,000–₹50,000 band
-  tier2_percent_increment: number;    // 7.5%
-  tier3_percent_increment: number;    // 5%, applies above tier2 ceiling
+  minimum_starting_bid_paise: number; // ₹99 default
+  tier1_ceiling_paise: number;        // retained for database compatibility
+  tier1_flat_increment_paise: number; // ₹1 default
+  tier2_ceiling_paise: number;        // retained for database compatibility
+  tier2_percent_increment: number;    // retained for database compatibility
+  tier3_percent_increment: number;    // retained for database compatibility
 }
 
 export const DEFAULT_BID_CONFIG: BidConfig = {
-  minimum_starting_bid_paise: 49_900,   // ₹499
+  minimum_starting_bid_paise: 9_900,    // ₹99
   tier1_ceiling_paise: 10_00_00,        // ₹10,000
-  tier1_flat_increment_paise: 50_000,   // ₹500
+  tier1_flat_increment_paise: 100,      // ₹1
   tier2_ceiling_paise: 50_00_00,        // ₹50,000
   tier2_percent_increment: 0.075,       // 7.5%
   tier3_percent_increment: 0.05,        // 5%
@@ -32,14 +32,7 @@ export const DEFAULT_BID_CONFIG: BidConfig = {
  */
 export function minimumNextBid(currentBidPaise: number, config: BidConfig = DEFAULT_BID_CONFIG): number {
   if (currentBidPaise <= 0) return config.minimum_starting_bid_paise;
-
-  if (currentBidPaise < config.tier1_ceiling_paise) {
-    return currentBidPaise + config.tier1_flat_increment_paise;
-  }
-  if (currentBidPaise <= config.tier2_ceiling_paise) {
-    return Math.ceil(currentBidPaise * (1 + config.tier2_percent_increment));
-  }
-  return Math.ceil(currentBidPaise * (1 + config.tier3_percent_increment));
+  return currentBidPaise + 100;
 }
 
 export function isValidBid(

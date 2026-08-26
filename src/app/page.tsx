@@ -20,7 +20,7 @@ export default async function HomePage() {
   ]);
 
   const champion = listings[0];
-  const nextMinBid = champion ? Math.ceil((champion.current_bid_paise * 1.05) / 100) : 4990;
+  const nextMinBid = champion ? Math.ceil((champion.current_bid_paise + 100) / 100) : 9900;
 
   return (
     <>

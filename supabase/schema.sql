@@ -234,9 +234,9 @@ create table public.admin_actions (
 -- Single-row config table the admin panel edits (min bid, increments, etc.)
 create table public.platform_config (
   id int primary key default 1 check (id = 1),
-  minimum_starting_bid_paise bigint not null default 49900,
+  minimum_starting_bid_paise bigint not null default 9900,
   tier1_ceiling_paise bigint not null default 1000000,   -- ₹10,000
-  tier1_flat_increment_paise bigint not null default 50000, -- ₹500
+  tier1_flat_increment_paise bigint not null default 100, -- ₹1
   tier2_ceiling_paise bigint not null default 5000000,   -- ₹50,000
   tier2_percent_increment numeric not null default 0.075,
   tier3_percent_increment numeric not null default 0.05,

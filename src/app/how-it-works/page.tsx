@@ -29,11 +29,9 @@ export default function HowItWorksPage() {
         <Section title="Minimum bid and increments">
           <ul className="list-disc space-y-1.5 pl-5">
             <li>Minimum starting bid: {formatPaise(cfg.minimum_starting_bid_paise)}</li>
-            <li>Below {formatPaise(cfg.tier1_ceiling_paise)}: a new bid must beat the current bid by at least {formatPaise(cfg.tier1_flat_increment_paise)}.</li>
-            <li>{formatPaise(cfg.tier1_ceiling_paise)}–{formatPaise(cfg.tier2_ceiling_paise)}: minimum increase is {(cfg.tier2_percent_increment * 100).toFixed(1)}%.</li>
-            <li>Above {formatPaise(cfg.tier2_ceiling_paise)}: minimum increase is {(cfg.tier3_percent_increment * 100).toFixed(1)}%.</li>
+            <li>Every new bid must be at least ₹1 higher than the current bid.</li>
           </ul>
-          <p className="mt-2 text-sm text-ink-muted">These figures are set by the platform admin and can change — the values shown here always reflect the current configuration.</p>
+          <p className="mt-2 text-sm text-ink-muted">The starting bid is set by the platform admin.</p>
         </Section>
 
         <Section title="What your payment buys">
