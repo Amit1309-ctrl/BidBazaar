@@ -48,7 +48,7 @@ export default async function OgImage({ params }: { params: { slug: string } }) 
           >
             ₹
           </div>
-          <div style={{ color: "#F4F5F7", fontSize: 26, fontWeight: 700 }}>BidBazaar</div>
+          <div style={{ color: "#F4F5F7", fontSize: 26, fontWeight: 700 }}>hotbid</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>

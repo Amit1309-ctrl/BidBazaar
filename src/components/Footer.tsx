@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-ink-muted sm:px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:justify-between">
           <div>
-            <div className="font-display font-semibold text-ink-secondary">BidBazaar</div>
+            <div className="font-display font-semibold text-ink-secondary">hotbid</div>
             <p className="mt-1 max-w-xs">India&apos;s competitive startup leaderboard. Bid, rank, get seen.</p>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
         </div>
         <p className="mt-8 text-xs">
-          © {new Date().getFullYear()} BidBazaar. Paying for placement increases leaderboard visibility only — it
+          © {new Date().getFullYear()} hotbid. Paying for placement increases leaderboard visibility only — it
           does not guarantee traffic, leads, or sales.
         </p>
       </div>

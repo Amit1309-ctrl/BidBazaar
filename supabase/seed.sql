@@ -1,5 +1,5 @@
 -- ============================================================================
--- BidBazaar — development seed data
+-- hotbid — development seed data
 -- All companies below are FICTIONAL, created for local development and
 -- demos only. is_seed = true marks every row so it can be filtered out of
 -- production stats or wiped with one query before go-live.

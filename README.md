@@ -1,4 +1,4 @@
-# BidBazaar
+# hotbid
 
 India's competitive startup leaderboard. Founders pay to rank; anyone can outbid them tomorrow.
 

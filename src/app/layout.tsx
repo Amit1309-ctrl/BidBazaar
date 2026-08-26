@@ -24,14 +24,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bidbazaar.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BidBazaar — India's competitive startup leaderboard",
-    template: "%s · BidBazaar",
+    default: "hotbid — India's competitive startup leaderboard",
+    template: "%s · hotbid",
   },
   description:
-    "Bid for rank, get seen. BidBazaar is a public leaderboard where Indian founders, SaaS companies, creators and D2C brands compete for the top spot.",
+    "Bid for rank, get seen. hotbid is a public leaderboard where Indian founders, SaaS companies, creators and D2C brands compete for the top spot.",
   openGraph: {
     type: "website",
-    siteName: "BidBazaar",
+    siteName: "hotbid",
     locale: "en_IN",
   },
   twitter: { card: "summary_large_image" },
@@ -43,13 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@graph": [
       {
         "@type": "Organization",
-        name: "BidBazaar",
+        name: "hotbid",
         url: SITE_URL,
         description: "India's competitive startup leaderboard.",
       },
       {
         "@type": "WebSite",
-        name: "BidBazaar",
+        name: "hotbid",
         url: SITE_URL,
         potentialAction: {
           "@type": "SearchAction",

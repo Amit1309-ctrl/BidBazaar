@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const listing = await getListingBySlug(params.slug);
   if (!listing) return {};
   return {
-    title: `${listing.company_name} — ${CATEGORY_LABELS[listing.category]} on BidBazaar`,
+    title: `${listing.company_name} — ${CATEGORY_LABELS[listing.category]} on hotbid`,
     description: listing.tagline,
     openGraph: {
-      title: `${listing.company_name} on BidBazaar`,
+      title: `${listing.company_name} on hotbid`,
       description: listing.tagline,
     },
   };

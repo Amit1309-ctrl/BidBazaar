@@ -1,5 +1,5 @@
 -- ============================================================================
--- BidBazaar — database schema
+-- hotbid — database schema
 -- Target: Postgres 15+ (Supabase)
 --
 -- Money is ALWAYS an integer count of paise. Never a float/numeric with

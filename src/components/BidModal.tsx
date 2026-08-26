@@ -110,7 +110,7 @@ export function BidModal({ listing, listings, onClose }: Props) {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: amountPaise,
         currency: "INR",
-        name: "BidBazaar",
+        name: "hotbid",
         description: `Outbid for ${listing.company_name}`,
         order_id: order.razorpayOrderId,
         prefill: { name: form.founderName, email: form.email },

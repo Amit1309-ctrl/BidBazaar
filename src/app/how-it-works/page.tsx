@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
       <main className="mx-auto max-w-2xl px-4 pb-24 pt-10 sm:px-6">
         <h1 className="font-display text-3xl font-bold">How it works</h1>
         <p className="mt-2 text-ink-secondary">
-          BidBazaar is a public leaderboard. This page explains the mechanics plainly, with no fine print hidden
+          hotbid is a public leaderboard. This page explains the mechanics plainly, with no fine print hidden
           elsewhere.
         </p>
 
