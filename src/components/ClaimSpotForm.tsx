@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { DEFAULT_BID_CONFIG } from "@/lib/bidding";
 import { formatPaise } from "@/lib/format";
-import { CATEGORY_LABELS, CITIES, type Category } from "@/types";
+import { CATEGORY_LABELS, CITIES, type Category, type City } from "@/types";
 
 const MIN = DEFAULT_BID_CONFIG.minimum_starting_bid_paise;
 
@@ -89,7 +89,7 @@ export function ClaimSpotForm() {
           <span className="text-xs text-ink-secondary">City</span>
           <select
             value={form.city}
-            onChange={(e) => setForm({ ...form, city: e.target.value })}
+            onChange={(e) => setForm({ ...form, city: e.target.value as City })}
             className="mt-1 w-full rounded-card border border-base-border bg-base-elevated px-3 py-2 text-sm outline-none focus:border-rupee/50"
           >
             {CITIES.map((c) => <option key={c} value={c}>{c}</option>)}

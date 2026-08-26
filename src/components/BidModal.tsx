@@ -83,6 +83,8 @@ export function BidModal({ listing, listings, onClose }: Props) {
   }
 
   async function handlePay() {
+    if (!listing) return;
+
     setStep("paying");
     setError(null);
     try {
