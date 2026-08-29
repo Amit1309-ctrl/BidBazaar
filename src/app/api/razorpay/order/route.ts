@@ -10,7 +10,6 @@ const bodySchema = z.object({
   form: z.object({
     companyName: z.string().min(1),
     website: z.string().url().or(z.string().min(1)),
-    tagline: z.string().max(140).optional().default(""),
     founderName: z.string().min(1),
     email: z.string().email(),
     twitter: z.string().optional(),
@@ -111,7 +110,6 @@ export async function POST(req: NextRequest) {
         company_id: company!.id,
         slug,
         company_name: form.companyName,
-        tagline: form.tagline || form.companyName,
         website: normalizeUrl(form.website),
         founder_name: form.founderName,
         category: form.category ?? "other",

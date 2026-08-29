@@ -67,7 +67,6 @@ export default async function OgImage({ params }: { params: { slug: string } }) 
           <div style={{ display: "flex", color: "#F4F5F7", fontSize: 64, fontWeight: 700 }}>
             {listing.company_name}
           </div>
-          <div style={{ display: "flex", color: "#9AA1AC", fontSize: 28 }}>{listing.tagline}</div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>

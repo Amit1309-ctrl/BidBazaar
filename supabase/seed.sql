@@ -13,12 +13,12 @@
 -- auth.users / public.users / public.companies with these fixed UUIDs.
 
 insert into public.listings
-  (id, company_id, slug, company_name, tagline, description, website, logo_url,
+  (id, company_id, slug, company_name, description, website, logo_url,
    founder_name, category, city, twitter_handle, verified, status,
    current_bid_paise, current_rank, highest_rank_ever, total_clicks, total_impressions, is_seed)
 values
   ('11111111-0000-0000-0000-000000000001','a1111111-0000-0000-0000-000000000001',
-   'nammaai','NammaAI','AI sales assistant built for Indian SMBs',
+   'nammaai','NammaAI',
    'NammaAI helps small and mid-size Indian businesses qualify and follow up on leads over WhatsApp, automatically, in English and five regional languages.',
    'https://nammaai.example.com', null, 'Ritika Shah', 'ai', 'Bengaluru', 'nammaai', true, 'approved',
    42_500_00, 1, 1, 1284, 9800, true),

@@ -79,7 +79,6 @@ export function ThroneCard({
           </h3>
           {listing.verified && <VerifiedBadge />}
         </Link>
-        <p className="mt-1 text-sm text-ink-secondary">{listing.tagline}</p>
         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-muted">
           <span>{CATEGORY_LABELS[listing.category]}</span>
           <span aria-hidden>·</span>

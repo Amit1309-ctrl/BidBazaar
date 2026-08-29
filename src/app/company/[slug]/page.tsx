@@ -17,10 +17,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!listing) return {};
   return {
     title: `${listing.company_name} — ${CATEGORY_LABELS[listing.category]} on hotbid`,
-    description: listing.tagline,
     openGraph: {
       title: `${listing.company_name} on hotbid`,
-      description: listing.tagline,
     },
   };
 }
@@ -54,7 +52,6 @@ export default async function CompanyPage({ params }: { params: { slug: string }
               {listing.verified && <VerifiedBadge />}
               <RankNumber rank={listing.current_rank ?? 0} />
             </div>
-            <p className="mt-1 text-ink-secondary">{listing.tagline}</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-muted">
               <span>{CATEGORY_LABELS[listing.category]}</span>
               <span aria-hidden>·</span>

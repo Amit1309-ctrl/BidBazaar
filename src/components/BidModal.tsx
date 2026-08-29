@@ -26,7 +26,6 @@ export function BidModal({ listing, listings, onClose }: Props) {
   const [form, setForm] = useState({
     companyName: "",
     website: "",
-    tagline: "",
     founderName: "",
     email: "",
     twitter: "",
@@ -46,7 +45,6 @@ export function BidModal({ listing, listings, onClose }: Props) {
         ...f,
         companyName: listing.company_name,
         website: listing.website,
-        tagline: listing.tagline,
         city: listing.city,
       }));
     }
@@ -197,7 +195,6 @@ export function BidModal({ listing, listings, onClose }: Props) {
           <div className="space-y-3">
             <TextField label="Company name" value={form.companyName} onChange={(v) => setForm({ ...form, companyName: v })} />
             <TextField label="Website" value={form.website} onChange={(v) => setForm({ ...form, website: v })} />
-            <TextField label="Tagline" value={form.tagline} onChange={(v) => setForm({ ...form, tagline: v })} maxLength={140} />
             <div className="grid grid-cols-2 gap-3">
               <TextField label="Founder name" value={form.founderName} onChange={(v) => setForm({ ...form, founderName: v })} />
               <TextField label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
@@ -258,7 +255,7 @@ export function BidModal({ listing, listings, onClose }: Props) {
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rupee/15 text-rupee-bright">✓</div>
             <h3 className="font-display text-lg font-semibold">Payment received</h3>
             <p className="text-sm text-ink-secondary">
-              We're confirming your payment and updating the leaderboard — this takes a few seconds. Refresh the
+              We&apos;re confirming your payment and updating the leaderboard — this takes a few seconds. Refresh the
               leaderboard shortly to see your new rank.
             </p>
             <button onClick={onClose} className="mt-2 rounded-pill bg-rupee px-5 py-2.5 text-sm font-semibold text-black">

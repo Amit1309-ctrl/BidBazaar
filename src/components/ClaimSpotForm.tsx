@@ -13,7 +13,7 @@ export function ClaimSpotForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
-    companyName: "", website: "", tagline: "", founderName: "", email: "",
+    companyName: "", website: "", founderName: "", email: "",
     category: "saas" as Category, city: CITIES[0],
   });
 
@@ -32,10 +32,10 @@ export function ClaimSpotForm() {
     setError(null);
     setSubmitting(true);
     try {
-      const res = await fetch("/api/razorpay/order", {
+      const res = await fetch("/api/listings/claim", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ listingId: null, amountPaise, form }),
+        body: JSON.stringify(form),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Could not start checkout.");
@@ -53,7 +53,7 @@ export function ClaimSpotForm() {
   if (submitted) {
     return (
       <div id="submit" className="rounded-card border border-rupee/30 bg-rupee-bg p-6 text-center">
-        <p className="font-medium text-rupee-bright">Checkout started — complete payment to go live on the board.</p>
+        <p className="font-medium text-rupee-bright">Thanks — your listing was submitted for review.</p>
       </div>
     );
   }
@@ -69,7 +69,6 @@ export function ClaimSpotForm() {
       <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <Field label="Company / product name" value={form.companyName} onChange={(v) => setForm({ ...form, companyName: v })} />
         <Field label="Website" value={form.website} onChange={(v) => setForm({ ...form, website: v })} />
-        <Field label="Tagline" value={form.tagline} onChange={(v) => setForm({ ...form, tagline: v })} className="sm:col-span-2" maxLength={140} />
         <Field label="Founder name" value={form.founderName} onChange={(v) => setForm({ ...form, founderName: v })} />
         <Field label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
 
@@ -118,7 +117,7 @@ export function ClaimSpotForm() {
         disabled={submitting}
         className="mt-5 w-full rounded-pill bg-rupee py-3 text-sm font-semibold text-black transition hover:bg-rupee-bright disabled:opacity-60"
       >
-        {submitting ? "Starting checkout…" : `Continue to payment — ${formatPaise(amountPaise)}`}
+        {submitting ? "Submitting…" : "Submit listing"}
       </button>
       <p className="mt-2 text-xs text-ink-muted">
         Listings are reviewed against our moderation guidelines before going live, even after payment succeeds.

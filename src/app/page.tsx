@@ -87,7 +87,6 @@ export default async function HomePage() {
                       <h2 className="font-display text-2xl font-bold">{champion.company_name}</h2>
                       {champion.verified && <VerifiedBadge />}
                     </div>
-                    <p className="text-sm text-ink-secondary">{champion.tagline}</p>
                   </div>
                 </div>
 

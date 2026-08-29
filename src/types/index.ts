@@ -33,7 +33,6 @@ export interface Listing {
   id: string;
   slug: string;
   company_name: string;
-  tagline: string;
   description: string | null;
   website: string;
   logo_url: string | null;

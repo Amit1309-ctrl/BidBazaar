@@ -72,7 +72,6 @@ create table public.listings (
   company_id uuid not null references public.companies(id) on delete cascade,
   slug text unique not null,
   company_name text not null,
-  tagline text not null check (char_length(tagline) <= 140),
   description text,
   website text not null,
   logo_url text,
