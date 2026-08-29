@@ -35,7 +35,7 @@ export default async function HomePage() {
               Live leaderboard · updates on every winning bid
             </div>
 
-            <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
+            <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-4xl">
               India&apos;s most competitive
               <br />
               <span className="text-rupee-bright">startup billboard.</span>

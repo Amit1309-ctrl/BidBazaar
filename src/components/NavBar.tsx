@@ -11,7 +11,7 @@ export function NavBar() {
   return (
     <header className="sticky top-0 z-40 border-b border-base-border/80 bg-base-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-display text-3xl font-semibold tracking-tight">
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-rupee/15 text-rupee">
             <IndianRupee size={16} strokeWidth={2.5} />
           </span>
