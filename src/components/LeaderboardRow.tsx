@@ -27,7 +27,6 @@ export function LeaderboardRow({
           <span className="truncate font-medium group-hover:underline">{listing.company_name}</span>
           {listing.verified && <VerifiedBadge />}
         </Link>
-        <p className="truncate text-xs text-ink-secondary">{listing.tagline}</p>
         <div className="mt-0.5 flex items-center gap-2 text-[11px] text-ink-muted sm:hidden">
           <span>{CATEGORY_LABELS[listing.category]}</span>
           <span aria-hidden>·</span>
