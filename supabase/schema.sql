@@ -333,6 +333,18 @@ as $$
   update public.listings set total_clicks = total_clicks + 1 where id = p_listing_id;
 $$;
 
+-- Helper for admin panel to fetch pending listings (avoids ENUM casting issues)
+create or replace function public.get_pending_listings(p_limit int default 20)
+returns table (id uuid, company_name text, slug text, category category_t, city city_t, created_at timestamptz)
+language sql
+security definer
+as $$
+  select id, company_name, slug, category, city, created_at
+  from public.listings
+  where status = 'pending'::listing_status_t
+  limit p_limit;
+$$;
+
 -- ============================================================================
 -- ROW LEVEL SECURITY
 -- ============================================================================
