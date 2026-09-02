@@ -1,4 +1,4 @@
-import { createBrowserClient, createServerClient, type CookieOptions } from "@supabase/ssr";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 
@@ -6,10 +6,6 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 /** Client-side Supabase client (browser). Respects RLS as the logged-in user. */
-export function createBrowserSupabase() {
-  return createBrowserClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-}
-
 /** Server Component / Route Handler client — reads the user's session from cookies. */
 export function createServerSupabase() {
   const cookieStore = cookies();
