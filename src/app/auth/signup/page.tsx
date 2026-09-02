@@ -8,6 +8,7 @@ import { Footer } from '@/components/Footer';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ export default function SignupPage() {
       const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, firstName }),
       });
 
       const data = await res.json();
@@ -50,6 +51,17 @@ export default function SignupPage() {
         <p className="mt-2 text-sm text-ink-secondary">Create an account to get started</p>
 
         <form onSubmit={handleSignup} className="mt-6 space-y-4">
+          <div>
+            <label className="block text-sm font-medium">First name</label>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="Amit"
+              className="mt-1 w-full rounded border border-base-border bg-base-surface px-3 py-2 text-sm"
+              required
+            />
+          </div>
           <div>
             <label className="block text-sm font-medium">Email</label>
             <input

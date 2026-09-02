@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
-import { createBrowserSupabase } from "@/lib/supabase";
+import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 export default function SigninPage() {
   const [email, setEmail] = useState("");
@@ -13,6 +13,7 @@ export default function SigninPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   async function handleSignin(e: React.FormEvent) {
     e.preventDefault();
@@ -28,7 +29,7 @@ export default function SigninPage() {
       return;
     }
 
-    router.push("/dashboard");
+    router.push(searchParams.get("next") === "/admin" ? "/admin" : "/dashboard");
     router.refresh();
   }
 

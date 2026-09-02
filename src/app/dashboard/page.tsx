@@ -2,9 +2,11 @@ import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { createServerSupabase } from "@/lib/supabase";
+import { createAdminSupabase } from "@/lib/supabase";
 import { formatPaise, formatNumber } from "@/lib/format";
 import { minimumNextBid } from "@/lib/bidding";
 import type { Listing } from "@/types";
+import { ClicksChart } from "@/components/ClicksChart";
 
 export const metadata = { title: "Dashboard" };
 export const dynamic = "force-dynamic"; // always reflects the signed-in user's own data
@@ -23,11 +25,16 @@ export default async function DashboardPage() {
             Founder dashboards are tied to the account that placed the bid. Sign in with the email you used at
             checkout to see your rank, clicks, and competitors.
           </p>
-          <button className="mt-6 rounded-pill bg-rupee px-5 py-2.5 text-sm font-semibold text-black hover:bg-rupee-bright">
-            Sign in with Google
-          </button>
-          <p className="mt-2 text-xs text-ink-muted">
-            Auth UI wiring: Supabase Auth (Google OAuth + email magic link) — see README for setup.
+          <Link href="/auth/signin">
+            <button className="mt-6 rounded-pill bg-rupee px-5 py-2.5 text-sm font-semibold text-black hover:bg-rupee-bright">
+              Sign in
+            </button>
+          </Link>
+          <p className="mt-4 text-xs text-ink-muted">
+            Don't have an account?{' '}
+            <Link href="/auth/signup" className="font-semibold hover:underline">
+              Sign up
+            </Link>
           </p>
         </main>
         <Footer />
@@ -71,6 +78,15 @@ export default async function DashboardPage() {
     .order("current_rank", { ascending: false })
     .limit(5);
 
+  const oneYearAgo = new Date();
+  oneYearAgo.setDate(oneYearAgo.getDate() - 364);
+  const admin = createAdminSupabase();
+  const { data: clickEvents } = await admin
+    .from("click_events")
+    .select("created_at")
+    .eq("listing_id", listing.id)
+    .gte("created_at", oneYearAgo.toISOString());
+
   const ctr = listing.total_impressions > 0
     ? ((listing.total_clicks / listing.total_impressions) * 100).toFixed(1)
     : "—";
@@ -88,6 +104,8 @@ export default async function DashboardPage() {
           <Stat label="Total clicks" value={formatNumber(listing.total_clicks)} />
           <Stat label="CTR" value={typeof ctr === "string" && ctr !== "—" ? `${ctr}%` : ctr} />
         </div>
+
+        <ClicksChart clickDates={(clickEvents ?? []).map((event) => event.created_at)} />
 
         <section className="mt-10">
           <h2 className="font-display text-lg font-semibold">Competitors directly above you</h2>
