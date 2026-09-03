@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { CATEGORY_LABELS, CITIES, type Category } from "@/types";
+import { CITIES, PUBLIC_CATEGORY_LABELS, type Category, type PublicCategory } from "@/types";
 import { cn } from "@/lib/cn";
 
-const CATEGORY_ENTRIES = Object.entries(CATEGORY_LABELS) as [Category, string][];
+const CATEGORY_ENTRIES = Object.entries(PUBLIC_CATEGORY_LABELS) as [PublicCategory, string][];
 
 export function CategoryFilterBar({ active }: { active?: Category }) {
   return (

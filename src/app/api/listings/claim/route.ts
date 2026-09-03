@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createAdminSupabase } from "@/lib/supabase";
+import { CATEGORY_SLUGS } from "@/types";
 
 // Temporary no-payment claim endpoint. Listings remain pending until reviewed.
 const bodySchema = z.object({
@@ -8,7 +9,7 @@ const bodySchema = z.object({
   website: z.string().min(1),
   founderName: z.string().min(1),
   email: z.string().email(),
-  category: z.string(),
+  category: z.enum(CATEGORY_SLUGS),
   city: z.string(),
 });
 

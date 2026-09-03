@@ -66,7 +66,7 @@ Money is stored as `bigint` paise everywhere. No floats touch currency.
 /                        Homepage — live #1 hero, stats, leaderboard preview, activity feed
 /leaderboard              Full leaderboard + filters + "claim a spot" form
 /[slug]                   Smart discovery route — resolves to a category, city, or special
-                           sort page: /ai /saas /d2c ... /bengaluru /mumbai ...
+                           sort page: /ai /saas /ecommerce ... /bengaluru /mumbai ...
                            /top-this-week /most-clicked /biggest-movers /new
 /company/[slug]            Public, SEO-indexed company page + dynamic OG share image
 /how-it-works              Transparency page (bidding rules, refunds, moderation, measurement)

@@ -26,13 +26,13 @@ values
   ('11111111-0000-0000-0000-000000000002','a1111111-0000-0000-0000-000000000002',
    'chaistack','ChaiStack','The dev stack for shipping fast, chai included',
    'ChaiStack bundles auth, payments, and hosting into one CLI so indie developers can ship a production app before their chai gets cold.',
-   'https://chaistack.example.com', null, 'Aman Verma', 'devtools', 'Remote India', 'chaistack', true, 'approved',
+   'https://chaistack.example.com', null, 'Aman Verma', 'saas', 'Remote India', 'chaistack', true, 'approved',
    38_000_00, 2, 2, 940, 7600, true),
 
   ('11111111-0000-0000-0000-000000000003','a1111111-0000-0000-0000-000000000003',
    'rocketdukaan','RocketDukaan','Launch your D2C store in an afternoon',
    'RocketDukaan gives small D2C brands a storefront, UPI checkout, and Shiprocket-style logistics integration out of the box.',
-   'https://rocketdukaan.example.com', null, 'Priya Nair', 'd2c', 'Mumbai', 'rocketdukaan', false, 'approved',
+   'https://rocketdukaan.example.com', null, 'Priya Nair', 'ecommerce', 'Mumbai', 'rocketdukaan', false, 'approved',
    31_200_00, 3, 3, 812, 6100, true),
 
   ('11111111-0000-0000-0000-000000000004','a1111111-0000-0000-0000-000000000004',
@@ -56,7 +56,7 @@ values
   ('11111111-0000-0000-0000-000000000007','a1111111-0000-0000-0000-000000000007',
    'launchbharat','LaunchBharat','Product Hunt meets India, minus the FOMO',
    'LaunchBharat is a weekly newsletter spotlighting new Indian products, with an editorial team that actually uses what they cover.',
-   'https://launchbharat.example.com', null, 'Meera Pillai', 'newsletter', 'Chennai', 'launchbharat', false, 'approved',
+   'https://launchbharat.example.com', null, 'Meera Pillai', 'creator', 'Chennai', 'launchbharat', false, 'approved',
    12_400_00, 7, 7, 301, 2700, true),
 
   ('11111111-0000-0000-0000-000000000008','a1111111-0000-0000-0000-000000000008',
@@ -68,7 +68,7 @@ values
   ('11111111-0000-0000-0000-000000000009','a1111111-0000-0000-0000-000000000009',
    'foundrly','Foundrly','Where India''s early founders find their first ten users',
    'Foundrly is a community and directory pairing brand-new Indian startups with early adopters willing to try unfinished products.',
-   'https://foundrly.example.com', null, 'Ishaan Kapoor', 'community', 'Kolkata', 'foundrly', false, 'approved',
+   'https://foundrly.example.com', null, 'Ishaan Kapoor', 'creator', 'Kolkata', 'foundrly', false, 'approved',
    6_200_00, 9, 9, 190, 1500, true),
 
   ('11111111-0000-0000-0000-000000000010','a1111111-0000-0000-0000-000000000010',

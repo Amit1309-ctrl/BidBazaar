@@ -14,8 +14,7 @@ create extension if not exists "pgcrypto";
 -- ----------------------------------------------------------------------------
 
 create type category_t as enum (
-  'ai','saas','devtools','fintech','d2c','ecommerce','agency','creator',
-  'newsletter','edtech','consumer_app','productivity','community','other'
+  'ai','saas','fintech','ecommerce','edtech','creator','agency','other'
 );
 
 create type city_t as enum (
@@ -400,8 +399,7 @@ create policy "owners read own bids"
 -- ============================================================================
 
 insert into public.categories (slug, label) values
-  ('ai','AI'), ('saas','SaaS'), ('devtools','Developer Tools'),
-  ('fintech','Fintech'), ('d2c','D2C'), ('ecommerce','Ecommerce'),
-  ('agency','Agency'), ('creator','Creator'), ('newsletter','Newsletter'),
-  ('edtech','EdTech'), ('consumer_app','Consumer App'),
-  ('productivity','Productivity'), ('community','Community'), ('other','Other');
+  ('ai','AI'), ('saas','SaaS & Developer Tools'), ('fintech','Fintech'),
+  ('ecommerce','E-commerce'), ('edtech','Education'),
+  ('creator','Creator & Community'), ('agency','Services & Agencies'),
+  ('other','Other');

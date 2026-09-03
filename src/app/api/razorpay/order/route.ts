@@ -3,6 +3,7 @@ import { z } from "zod";
 import { getRazorpayClient } from "@/lib/razorpay";
 import { createAdminSupabase } from "@/lib/supabase";
 import { minimumNextBid, DEFAULT_BID_CONFIG } from "@/lib/bidding";
+import { CATEGORY_SLUGS } from "@/types";
 
 const bodySchema = z.object({
   listingId: z.string().uuid().nullable(), // null = brand-new listing
@@ -15,7 +16,7 @@ const bodySchema = z.object({
     twitter: z.string().optional(),
     linkedin: z.string().optional(),
     city: z.string().optional(),
-    category: z.string().optional(),
+    category: z.enum(CATEGORY_SLUGS).optional(),
     promoCode: z.string().optional(),
   }),
 });

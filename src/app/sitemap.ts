@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { CATEGORY_LABELS, CITIES } from "@/types";
+import { CITIES, PUBLIC_CATEGORY_LABELS } from "@/types";
 import { getLeaderboard } from "@/lib/data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bidbazaar.in";
@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "" ? 1 : 0.8,
   }));
 
-  const categoryRoutes = Object.keys(CATEGORY_LABELS).map((slug) => ({
+  const categoryRoutes = Object.keys(PUBLIC_CATEGORY_LABELS).map((slug) => ({
     url: `${SITE_URL}/${slug}`,
     changeFrequency: "hourly" as const,
     priority: 0.6,

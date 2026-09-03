@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · hotbid",
   },
   description:
-    "Bid for rank, get seen. hotbid is a public leaderboard where Indian founders, SaaS companies, creators and D2C brands compete for the top spot.",
+    "Bid for rank, get seen. hotbid is a public leaderboard where Indian founders, SaaS companies, creators and e-commerce brands compete for the top spot.",
   openGraph: {
     type: "website",
     siteName: "hotbid",

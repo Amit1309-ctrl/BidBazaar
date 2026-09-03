@@ -4,7 +4,7 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { LeaderboardBoard } from "@/components/LeaderboardBoard";
 import { CategoryFilterBar, CityFilterBar } from "@/components/CategoryFilterBar";
-import { CATEGORY_LABELS, CITIES, type Category, type City } from "@/types";
+import { CATEGORY_LABELS, CITIES, PUBLIC_CATEGORY_LABELS, type Category, type City } from "@/types";
 import { getLeaderboard } from "@/lib/data";
 
 export const revalidate = 30;
@@ -21,7 +21,7 @@ const SPECIAL_PAGES = {
 } as const;
 
 function resolve(slug: string) {
-  if (slug in CATEGORY_LABELS) return { kind: "category" as const, category: slug as Category };
+  if (slug in PUBLIC_CATEGORY_LABELS) return { kind: "category" as const, category: slug as Category };
   if (slug in CITY_SLUGS) return { kind: "city" as const, city: CITY_SLUGS[slug] };
   if (slug in SPECIAL_PAGES) return { kind: "special" as const, page: SPECIAL_PAGES[slug as keyof typeof SPECIAL_PAGES] };
   return null;

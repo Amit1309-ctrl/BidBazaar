@@ -1,23 +1,31 @@
-export type Category =
-  | "ai" | "saas" | "devtools" | "fintech" | "d2c" | "ecommerce"
-  | "agency" | "creator" | "newsletter" | "edtech" | "consumer_app"
-  | "productivity" | "community" | "other";
+export const PUBLIC_CATEGORY_SLUGS = [
+  "ai", "saas", "fintech", "ecommerce", "edtech", "creator", "agency",
+] as const;
+
+export const CATEGORY_SLUGS = [...PUBLIC_CATEGORY_SLUGS, "other"] as const;
+
+export type PublicCategory = typeof PUBLIC_CATEGORY_SLUGS[number];
+export type Category = typeof CATEGORY_SLUGS[number];
 
 export const CATEGORY_LABELS: Record<Category, string> = {
   ai: "AI",
-  saas: "SaaS",
-  devtools: "Developer Tools",
+  saas: "SaaS & Developer Tools",
   fintech: "Fintech",
-  d2c: "D2C",
-  ecommerce: "Ecommerce",
-  agency: "Agency",
-  creator: "Creator",
-  newsletter: "Newsletter",
-  edtech: "EdTech",
-  consumer_app: "Consumer App",
-  productivity: "Productivity",
-  community: "Community",
+  ecommerce: "E-commerce",
+  edtech: "Education",
+  creator: "Creator & Community",
+  agency: "Services & Agencies",
   other: "Other",
+};
+
+export const PUBLIC_CATEGORY_LABELS: Record<PublicCategory, string> = {
+  ai: CATEGORY_LABELS.ai,
+  saas: CATEGORY_LABELS.saas,
+  fintech: CATEGORY_LABELS.fintech,
+  ecommerce: CATEGORY_LABELS.ecommerce,
+  edtech: CATEGORY_LABELS.edtech,
+  creator: CATEGORY_LABELS.creator,
+  agency: CATEGORY_LABELS.agency,
 };
 
 export type City =
